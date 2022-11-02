@@ -31,4 +31,6 @@ export interface Model extends SanityBody {
     mainImage: Image;
     description: string;
     links: Link[];
+    nextModel: Model;
+    previousModel: Model;
 }
