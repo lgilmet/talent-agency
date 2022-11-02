@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
@@ -10,19 +11,17 @@ type Props = {
 
 export default function ModelLink({ model }: Props) {
     return model ? (
-        <div className="bg-yellow-400 h-full">
-            {model.name} - {model.description}
+        <div className=" bg-yellow-400 ">
             {model.mainImage && (
-                <Image
-                    className="h-full"
-                    layout="responsive"
-                    objectFit="cover"
-                    alt={`Model portrait of ${model.name}`}
-                    src={urlFor(model.mainImage)?.url()}
-                    width={1}
-                    height={1}
-                />
+                <div className="p-1">
+                    <img
+                        className="object-cover object-center h-[200px] w-full"
+                        alt={`Portrait of ${model.name}`}
+                        src={urlFor(model.mainImage)?.url()}
+                    />
+                </div>
             )}
+            <div className="p-1">{model.name}</div>
         </div>
     ) : (
         <div> no model </div>

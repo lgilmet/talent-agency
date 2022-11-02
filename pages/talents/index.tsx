@@ -11,12 +11,9 @@ type Props = {
 
 export default function Talents({ models }: Props) {
     return (
-        <div className="grid-cols-2 md:grid-cols-3 grid gap-4">
+        <div className=" grid-cols-2 md:grid-cols-3 grid gap-4">
             {models?.map((model) => (
-                <Link
-                    className="h-[300px]"
-                    key={model._id}
-                    href={`/talent/${model.slug.current}`}>
+                <Link key={model._id} href={`/talent/${model.slug.current}`}>
                     <ModelLink model={model} />
                 </Link>
             ))}
